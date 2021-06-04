@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Brazo robotico</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 {
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+  }
+  .bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 {
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 {
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .navbar {
+    background-color: #474e5d;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #ffffff !important;
+  }
+
+  .jumbotron{
+    background-color: #2f2f2f
+  }
+  </style>
+</head>
+
+
+
+
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+ <a class="navbar-brand" href="/index.html">BR</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/Robot/templates/Definiciones.html">DEFINICIONES</a></li>
+        <li><a href="/Robot/templates/Piezas.html">PIEZAS</a></li>
+        <li><a href="/Robot/templates/Programación.html">PROGRAMACION</a></li>
+        <li><a href="/Robot/templates/Funcionamiento.html">FUNCIONAMIENTO</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="jumbotron">
+  <center><h3 style="color: #71c700;">PROGRAMACION</h3></center>
+  <center><h4 style="color:  #5f5e5e;" >//Declaration Globals Variables.</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #dfaf11;" >short int Preload_LOW_SM1 =0, Preload_HIGH_SM1 =0;</h4>
+  <h4 style="color:  #dfaf11;" >short int Preload_LOW_SM2 =0, Preload_HIGH_SM2 =0;</h4>
+  <h4 style="color:  #dfaf11;" >short int Preload_LOW_SM3 =0, Preload_HIGH_SM3 =0;</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #dfaf11;" >unsigned int Read_ADC=0, Angule=0;</h4>
+  <h4 style="color:  #dfaf11;" >int Counter_Servo=0;</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #1ae6db;" >void case_1(){</h4>
+  <h4 style="color:  #dfaf11;" >RA1_bit=0; TMR0L=Preload_LOW_SM2; TMR0H=Preload_HIGH_SM2; RA2_bit=1; Counter_Servo=2;</h4>
+  <h4 style="color:  #5f5e5e;" >}</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #1ae6db;" >void case_2(){</h4>
+  <h4 style="color:  #dfaf11;" >RA2_bit=0; TMR0L=Preload_LOW_SM3; TMR0H=Preload_HIGH_SM3; RA3_bit=1; Counter_Servo=3;</h4>
+  <h4 style="color:  #5f5e5e;" >}</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #f80c34;" >case_3(){RA3_bit=0;TMR0ON_bit=0;}</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #f80c34;" >case_4(){ TMR0ON_bit=0;}</h4>
+  <h4 style="color:  #0ae415;" >//Timer0</h4>
+  <h4 style="color:  #0ae415;" >//Prescaler 1:1; TMR0 Preload = 52536; Actual Interrupt Time : 2.6 ms</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #1ae6db;" >void InitTimer0(){</h4>
+  <h4 style="color:  #f80c34;" >T0CON=0x08;</h4>
+  <h4 style="color:  #f80c34;" >TMR0H=0x00;</h4>
+  <h4 style="color:  #f80c34;" >TMR0L=0x00;</h4>
+  <h4 style="color:  #f80c34;" >GIE_bit=1;</h4>
+  <h4 style="color:  #f80c34;" >TMR0IE_bit=1;</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #5f5e5e;" >}</h4>
+  <h4 style="color:  #5f5e5e;" >//</h4>
+  <h4 style="color:  #0ae415;" >//Timer1</h4>
+  <h4 style="color:  #0ae415;" >//Prescaler 1:2; TMR1 Preload = 15536; Actual Interrupt Time : 20 ms</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #1ae6db;" >void InitTimer1(){</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #5f5e5e;" >T1CON=0x11;</h4>
+  <h4 style="color:  #5f5e5e;" >TMR1IF_bit=0;</h4>
+  <h4 style="color:  #5f5e5e;" >TMR1H =0x3C;</h4>
+  <h4 style="color:  #5f5e5e;" >TMR1L =0xB0;</h4>
+  <h4 style="color:  #5f5e5e;" >TMR1IE_bit =1;</h4>
+  <h4 style="color:  #5f5e5e;" >INTCON =0xE0;</h4>
+  <h4 style="color:  #5f5e5e;" >}</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #1ae6db;" >void Interrupt(){</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #5f5e5e;" >if (  TMR1IF_bit){</h4>
+  <h4 style="color:  #0ae415;" >//</  h4>
+  <h4 style="color:  #5f5e5e;" >TMR1  IF_bit = 0;</h4>
+  <h4 style="color:  #5f5e5e;" >TMR1H = 0x3C;</h4>
+  <h4 style="color:  #5f5e5e;" >TMR1L = 0xB0;</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #f80c34;" >TMR0ON_bit=1;</h4>
+  <h4 style="color:  #f80c34;" >TMR0L=Preload_LOW_SM1;</h4>
+  <h4 style="color:  #f80c34;" >TMR0H=Preload_HIGH_SM1;</h4>
+  <h4 style="color:  #f80c34;" >RA1_bit=1;//Servo Motor 1</h4>
+  <h4 style="color:  #f80c34;" >Counter_Servo=1;</h4>
+  <h4 style="color:  #5f5e5e;" >}</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #5f5e5e;" >if (TMR0IF_bit){</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #5f5e5e;" >TMR0IF_bit=0;</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #5f5e5e;" >switch(Counter_Servo){</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #5f5e5e;" >case 1: case_1(); break;</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #5f5e5e;" >case 2: case_2(); break;</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #5f5e5e;" >case 3: case_3(); break;</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #5f5e5e;" >default : RA3_bit=1;</h4>
+  <h4 style="color:  #1ae6db;;" >}</h4>
+  <h4 style="color:  #1ae6db;;" >}</h4>
+  <h4 style="color:  #1ae6db;;" >}</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #1ae6db;" >void Init(){</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #5f5e5e;" >LATA=0;</h4>
+  <h4 style="color:  #5f5e5e;" >ANSELA=0x00;</h4>
+  <h4 style="color:  #5f5e5e;" >TRISA=0x00;</h4>
+  <h4 style="color:  #5f5e5e;" >ANSELB=0XFF;</h4>
+  <h4 style="color:  #5f5e5e;" >TRISB=0XFF;</h4>
+  <h4 style="color:  #5f5e5e;" >}</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #1ae6db;" >void main() {</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #5f5e5e;" >Init();</h4>
+  <h4 style="color:  #5f5e5e;" >ADC_Init();</h4>
+  <h4 style="color:  #5f5e5e;" >ADC_Init();</h4>
+  <h4 style="color:  #5f5e5e;" >InitTimer0();</h4>
+  <h4 style="color:  #0ae415;" >//</h4>
+  <h4 style="color:  #1ae6db;" >do</h4>
+  <h4 style="color:  #5f5e5e;" >{</h4>
+  <h4 style="color:  #1ae6db;" >}while(1);</h4>
+  <h4 style="color:  #5f5e5e;" >}</h4>
+  <h4 style="color:  #5f5e5e;" >}</h4></center>
+
+</div>
+<footer class="container-fluid bg-4 text-center">
+  <p>Made By <a href="https://twitter.com/RonaldBc1">RonaldBC21</a></p>
+</footer>
+
+</body>
+</html>
